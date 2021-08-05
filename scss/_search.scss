@@ -1,0 +1,32 @@
+@use 'colors';
+
+.search-card {
+    height: 100%;
+    margin: 16px;
+}
+
+
+.search-section {
+    width: 100%;
+    height: 42px;
+    // display: flex;
+    // align-items: center;
+    position: relative;
+}
+
+.search-input {
+    $padd: 32px;
+    padding-left: $padd;
+    width: calc(100% - #{$padd});
+    position: absolute;
+}
+
+.search-icon {
+    position: absolute;
+    top:50%;
+    transform: translate(0, -50%);
+    left: 8px;
+    width: 16px;
+    height: 16px;
+    color: colors.$color-text-grey;
+}

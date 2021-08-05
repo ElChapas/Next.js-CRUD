@@ -1,0 +1,27 @@
+@use 'colors';
+
+.container {
+    margin: 5%;
+}
+
+.grid-container {
+    // background-color: rgba(212, 212, 212, 0.13);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: auto / 4fr 6fr;
+    column-gap: 24px;
+    color: colors.$color-white;
+    height: 100px;
+}
+
+.card {
+    background-color: colors.$color-bg-grey;
+    border-radius: 14px;
+    width: 100%;
+    height: 100%; 
+    box-shadow: colors.$shadow;
+    & .form {
+        margin: 16px;
+    }
+}

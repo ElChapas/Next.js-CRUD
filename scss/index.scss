@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+@import 'fonts';
+@import 'cards';
+@import 'form';
+@import 'colors';
+@import 'search';
+
+body {
+    font-family: $family;
+    height: 100vh;
+    margin: 0;
+    background-color: $color-bg-black;
+}
+
+.title {
+    margin: 4px;
+    font-size: 36px;
+    color: $color-Tertiary;
+}
+
