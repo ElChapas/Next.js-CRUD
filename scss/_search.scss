@@ -1,10 +1,14 @@
 @use 'colors';
+@use 'mixins';
 
 .search-card {
     height: 100%;
     margin: 16px;
-}
 
+    @include mixins.media-up(md) {
+        margin-top: 32px;
+    }
+}
 
 .search-section {
     width: 100%;
@@ -23,10 +27,54 @@
 
 .search-icon {
     position: absolute;
-    top:50%;
+    top: 50%;
     transform: translate(0, -50%);
     left: 8px;
     width: 16px;
     height: 16px;
     color: colors.$color-text-grey;
 }
+
+.list {
+    width: 100%;
+    display: grid;
+    grid-template: auto / repeat(2, minmax(300px, 1fr)) ;
+    flex-direction: column;
+    margin-top: 32px;
+    
+    @include mixins.media-up(lg) {
+        grid-template: auto / minmax(300px, 1fr) ;
+
+    }
+
+}
+
+
+.list-item {
+    margin: 0 8px 8px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$color-black;
+    height: 52px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: colors.$color-white;
+    cursor: pointer;
+    &:hover{
+        background-color: colors.$color-bg-black;
+    }
+    animation: item-animation 0.5s ease;
+    position: relative;
+}
+
+@keyframes item-animation {        
+    from {
+      opacity : 0;
+      left : -100px;
+    }
+    to {
+      opacity : 1;
+      left : 0;
+    }      
+  }

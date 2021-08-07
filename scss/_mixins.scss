@@ -1,5 +1,7 @@
-@mixin placeholder-color ($color) {
-    ::placeholder { color: $color;}
-    ::-webkit-input-placeholder { color: $color;}
-    :-ms-input-placeholder { color: $color;}
+@use 'breakpoints';
+
+@mixin media-up($breakpoint) {
+    @media screen and (max-width: map-get(breakpoints.$breakpoints, $breakpoint)) {
+        @content
+    }
 }

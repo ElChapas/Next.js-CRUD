@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
-@import 'fonts';
-@import 'cards';
-@import 'form';
-@import 'colors';
-@import 'search';
+@import "fonts";
+@import "cards";
+@import "form";
+@import "colors";
+@import "search";
+@import 'breakpoints';
+@import '_mixins';
 
 body {
     font-family: $family;
-    height: 100vh;
+    // height: 100vh;
     margin: 0;
     background-color: $color-bg-black;
 }
@@ -18,4 +20,3 @@ body {
     font-size: 36px;
     color: $color-Tertiary;
 }
-
