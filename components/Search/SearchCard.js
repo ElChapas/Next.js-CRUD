@@ -7,7 +7,6 @@ const SearchCard = () => {
 
     useEffect(() => {
         if (users.length) {
-            console.log('USERS CAMBIO');
             setUserSearch(users);
         }
     }, [users]);

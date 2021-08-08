@@ -52,7 +52,6 @@ const FormCard = () => {
                         body: JSON.stringify(user),
                     });
                     const data = await res.json();
-                    console.log(data);
                     if(data.success){
                         getUsers()
                         resetForm();
@@ -82,7 +81,6 @@ const FormCard = () => {
         const id = e.target.id;
         let content = e.target.value;
 
-        console.log(content);
         setUser((prev) => {
             return {
                 ...prev,

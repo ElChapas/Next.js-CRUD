@@ -14,7 +14,6 @@ const UsersProvider = ({ children }) => {
 
 
     useEffect(() => {
-        console.log('Get users');
         getUsers();
     }, []);
 
