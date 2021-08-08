@@ -4,17 +4,24 @@ const UsersContext = createContext();
 
 const UsersProvider = ({ children }) => {
     const [users, setUsers] = useState([]);
-    const [editMode, setEditMode] = useState(false)
-    const [actualUser, setActualUser] = useState({})
+    const [editMode, setEditMode] = useState(false);
+    const [actualUser, setActualUser] = useState({
+        nombre: "",
+        apellido: "",
+        telefono: "",
+    });
+
+
 
     useEffect(() => {
-        getUsers()
-    }, [])
+        console.log('Get users');
+        getUsers();
+    }, []);
 
     const getUsers = async () => {
         const res = await fetch(`api/users`);
         const data = await res.json();
-        setUsers(data.data)
+        setUsers(data.data);
     };
 
     return (
@@ -23,6 +30,10 @@ const UsersProvider = ({ children }) => {
                 users,
                 setUsers,
                 getUsers,
+                editMode,
+                setEditMode,
+                actualUser,
+                setActualUser,
             }}
         >
             {children}

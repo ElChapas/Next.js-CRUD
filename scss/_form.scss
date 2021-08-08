@@ -40,7 +40,8 @@ label {
 
 .form-action {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .button-add {
@@ -83,4 +84,20 @@ label {
         -ms-transform: scale(1);
         -o-transform: scale(1);
     }
+}
+
+.cancel-option {
+    margin-right: 16px;
+    color: colors.$color-danger;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.form-action-icon {
+    color: colors.$color-danger;
+    font-size: 1.2em;
+    margin-left: 16px;
+    cursor: pointer;
 }

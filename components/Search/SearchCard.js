@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UsersContext } from "../../context/UsersContext";
 const SearchCard = () => {
-    const { users } = useContext(UsersContext);
+    const { users, setEditMode, setActualUser } = useContext(UsersContext);
     const [search, setSearch] = useState("");
     const [userSearch, setUserSearch] = useState([]);
 
@@ -18,7 +18,8 @@ const SearchCard = () => {
             //avoid 1 letter search
             const filteredData = users.filter((user) => {
                 return Object.keys(user).some((key) => {
-                    return user[key].toString().toLowerCase().includes(input);
+                    return user[key].toString().toLowerCase().includes(input) || 
+                    `${user.nombre.toLowerCase()} ${user.apellido.toLowerCase()}`.includes(input);
                 });
             });
             setUserSearch(filteredData);
@@ -28,7 +29,8 @@ const SearchCard = () => {
     };
 
     const handleClickUser = (user) => {
-        console.log(user);
+        setEditMode(true)
+        setActualUser(user)
     };
 
     return (
@@ -43,22 +45,24 @@ const SearchCard = () => {
                     />
                     <i className="fas fa-search search-icon"></i>
                 </div>
-                <div className="list">
-                    {userSearch &&
-                        userSearch.map((user, index) => {
-                            return (
-                                <div
-                                    className="list-item"
-                                    key={index}
-                                    onClick={() => handleClickUser(user)}
-                                >
-                                    <span>
-                                        {user.nombre} {user.apellido} (
-                                        {user.telefono})
-                                    </span>
-                                </div>
-                            );
-                        })}
+                <div className="list-section">
+                    <div className="list">
+                        {userSearch &&
+                            userSearch.map((user, index) => {
+                                return (
+                                    <div
+                                        className="list-item"
+                                        key={index}
+                                        onClick={() => handleClickUser(user)}
+                                    >
+                                        <span>
+                                            {user.nombre} {user.apellido} (
+                                            {user.telefono})
+                                        </span>
+                                    </div>
+                                );
+                            })}
+                    </div>
                 </div>
             </div>
         </div>
