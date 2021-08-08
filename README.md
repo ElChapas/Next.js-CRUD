@@ -1,6 +1,8 @@
 ## Next.js CRUD
 
 This crud was created with educational purposes. I really enjoyed discovering Next.js creating this simple CRUD using the Api that Next.js provide us.
+[See Project](https://next-js-crud.vercel.app/)
+
 
 ****
 ### Modules I used
